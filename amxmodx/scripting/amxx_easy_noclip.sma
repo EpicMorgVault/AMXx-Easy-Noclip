@@ -3,7 +3,7 @@
 #include <fun>
 
 #define PLUGIN "Easy NoClip"
-#define VERSION "0.3"
+#define VERSION "0.4"
 #define AUTHOR "EpicMorg"
 
 
@@ -15,18 +15,17 @@ public plugin_init() {
 
 public ClCmdOnNoClip(id)
         {
-                //if(!(get_user_flags(id) & ADMIN_IMMUNITY))
-                if(!(get_user_flags(id) & ADMIN_LEVEL_C))
+                if(!(get_user_flags(id) & ADMIN_LEVEL_E))
                         return PLUGIN_CONTINUE;
          
                 set_user_noclip(id, 1)
                 return PLUGIN_HANDLED;
         }
-         
+
+//legacy for old clients
 public ClCmdOffNoClip(id)
         {
-                //if(!(get_user_flags(id) & ADMIN_IMMUNITY))
-                if(!(get_user_flags(id) & ADMIN_LEVEL_C))
+                if(!(get_user_flags(id) & ADMIN_LEVEL_E))
                         return PLUGIN_CONTINUE;
          
                 set_user_noclip(id, 0)
